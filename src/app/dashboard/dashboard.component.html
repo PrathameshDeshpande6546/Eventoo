@@ -1,0 +1,42 @@
+<!-- dashboard.component.html -->
+<header>
+  <nav>
+    <div class="container">
+      <div class="navbar">
+        <h1>EVENTO</h1>
+        <div class="nav-links">
+          <span>User Details</span>
+          <span>Created Events</span>
+          <button style="margin: 10;"  (click)="createEvent()">Create Event</button>
+          <button (click)="logout()">Logout</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="container">
+    <h2>Hosted Events</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Event ID</th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let event of hostedEvents">
+          <td>{{ event.eventId }}</td>
+          <td>{{ event.name }}</td>
+          <td>{{ event.location }}</td>
+          <td>{{ event.startDate }}</td>
+          <td>{{ event.endDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>

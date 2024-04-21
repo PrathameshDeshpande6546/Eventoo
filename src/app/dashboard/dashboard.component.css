@@ -1,0 +1,81 @@
+/* dashboard.component.css */
+
+/* Header */
+header {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Set navbar to full width */
+}
+
+.logo {
+  margin-right: auto; /* Aligns the logo to the left corner */
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links span {
+  margin-right: 10px; /* Reduce the margin between span elements */
+  cursor: pointer;
+}
+
+.nav-links button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px; /* Add margin between buttons */
+}
+
+.nav-links button:hover {
+  background-color: #ccc;
+}
+
+/* Main */
+main {
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #000;
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: #ddd;
+}

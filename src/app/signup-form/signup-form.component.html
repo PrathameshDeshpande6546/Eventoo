@@ -1,0 +1,94 @@
+<app-header></app-header>
+<div class="container">
+  <div class="signup-form">
+    <h2>Sign Up</h2>
+    <form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="user-id">User ID:</label>
+          <input type="text" id="user-id" formControlName="userId" />
+          <div
+            *ngIf="
+              signupForm.get('userId')!.invalid &&
+              signupForm.get('userId')!.touched
+            "
+            class="error"
+          >
+            User ID is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" formControlName="name" />
+          <div
+            *ngIf="
+              signupForm.get('name')!.invalid && signupForm.get('name')!.touched
+            "
+            class="error"
+          >
+            Name is required
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" formControlName="phone" />
+          <div
+            *ngIf="
+              signupForm.get('phone')!.invalid &&
+              signupForm.get('phone')!.touched
+            "
+            class="error"
+          >
+            Phone is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" formControlName="email" />
+          <div
+            *ngIf="
+              signupForm.get('email')!.invalid &&
+              signupForm.get('email')!.touched
+            "
+            class="error"
+          >
+            Email is required
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="college">College:</label>
+          <input type="text" id="college" formControlName="college" />
+          <div
+            *ngIf="
+              signupForm.get('college')!.invalid &&
+              signupForm.get('college')!.touched
+            "
+            class="error"
+          >
+            College is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" formControlName="password" />
+          <div
+            *ngIf="
+              signupForm.get('password')!.invalid &&
+              signupForm.get('password')!.touched
+            "
+            class="error"
+          >
+            Password is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+      </div>
+    </form>
+  </div>
+</div>

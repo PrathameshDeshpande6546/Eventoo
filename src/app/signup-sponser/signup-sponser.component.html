@@ -1,0 +1,40 @@
+<app-header></app-header>
+<div class="container">
+  <div class="signup-form">
+      <h2>Sponsor Sign Up</h2>
+      <form (ngSubmit)="onSubmit()" [formGroup]="sponsorForm">
+          <div class="form-group">
+              <label for="sponsor-id">Sponsor ID:</label>
+              <input type="text" id="sponsor-id" formControlName="sponsorId">
+              <div *ngIf="sponsorForm.get('sponsorId')!.invalid && sponsorForm.get('sponsorId')!.touched" class="error">Sponsor ID is required</div>
+          </div>
+          <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" formControlName="name">
+              <div *ngIf="sponsorForm.get('name')!.invalid && sponsorForm.get('name')!.touched" class="error">Name is required</div>
+          </div>
+          <div class="form-group">
+              <label for="description">Description:</label>
+              <input type="text" id="description" formControlName="description">
+              <div *ngIf="sponsorForm.get('description')!.invalid && sponsorForm.get('description')!.touched" class="error">Description is required</div>
+          </div>
+          <div class="form-group">
+              <div class="form-row">
+                  <div class="form-group">
+                      <label for="phone">Phone:</label>
+                      <input type="tel" id="phone" formControlName="phone">
+                      <div *ngIf="sponsorForm.get('phone')!.invalid && sponsorForm.get('phone')!.touched" class="error">Phone is required</div>
+                  </div>
+                  <div class="form-group">
+                      <label for="email">Email:</label>
+                      <input type="email" id="email" formControlName="email">
+                      <div *ngIf="sponsorForm.get('email')!.invalid && sponsorForm.get('email')!.touched" class="error">Email is required</div>
+                  </div>
+              </div>
+          </div>
+          <div class="form-group">
+              <button type="submit" [disabled]="sponsorForm.invalid">Sign Up</button>
+          </div>
+      </form>
+  </div>
+</div>

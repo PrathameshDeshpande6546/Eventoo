@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="container">
+  <div class="registration-form">
+      <h2>Event Registration</h2>
+      <form (ngSubmit)="onSubmit()" [formGroup]="eventForm">
+          <div class="form-group">
+              <label for="event-id">Event ID:</label>
+              <input type="text" id="event-id" formControlName="eventId">
+              <div *ngIf="eventForm.get('eventId')!.invalid && eventForm.get('eventId')!.touched" class="error">Event ID is required</div>
+          </div>
+          <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" formControlName="name">
+              <div *ngIf="eventForm.get('name')!.invalid && eventForm.get('name')!.touched" class="error">Name is required</div>
+          </div>
+          <div class="form-group">
+              <label for="location">Location:</label>
+              <input type="text" id="location" formControlName="location">
+              <div *ngIf="eventForm.get('location')!.invalid && eventForm.get('location')!.touched" class="error">Location is required</div>
+          </div>
+          <div class="form-group">
+              <label for="start-date">Start Date:</label>
+              <input type="date" id="start-date" formControlName="startDate">
+              <div *ngIf="eventForm.get('startDate')!.invalid && eventForm.get('startDate')!.touched" class="error">Start Date is required</div>
+          </div>
+          <div class="form-group">
+              <label for="end-date">End Date:</label>
+              <input type="date" id="end-date" formControlName="endDate">
+              <div *ngIf="eventForm.get('endDate')!.invalid && eventForm.get('endDate')!.touched" class="error">End Date is required</div>
+          </div>
+          <div class="form-group">
+              <button type="submit" [disabled]="eventForm.invalid">Register</button>
+          </div>
+      </form>
+  </div>
+</div>
